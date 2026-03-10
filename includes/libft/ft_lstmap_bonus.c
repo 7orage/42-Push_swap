@@ -1,54 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_libft.c                                         :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:44:11 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 11:54:10 by lheteau          ###   ########.fr       */
+/*   Created: 2025/11/26 13:58:15 by lheteau           #+#    #+#             */
+/*   Updated: 2025/11/26 15:09:48 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_numlen(int n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	len;
+	t_list	*new;
+	t_list	*tab;
+	void	*cont;
 
-	len = 0;
-	if (n < 0)
+	tab = NULL;
+	if (!lst || !f || !del)
+		return (NULL);
+	while (lst)
 	{
-		len++;
-		n *= -1;
+		cont = f(lst->content);
+		new = ft_lstnew(cont);
+		if (!new)
+		{
+			free (cont);
+			ft_lstclear(&tab, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&tab, new);
+		lst = lst->next;
 	}
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_numlen_unsigned(unsigned int n)
-{
-	int		len;
-
-	len = 0;
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_putchar(char *c)
-{
-	write(1, &c, 1);
-	return (1);
+	return (tab);
 }

@@ -1,54 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_libft.c                                         :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:44:11 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 11:54:10 by lheteau          ###   ########.fr       */
+/*   Created: 2025/11/22 16:08:15 by lheteau           #+#    #+#             */
+/*   Updated: 2025/11/24 12:12:33 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_numlen(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	len;
+	char	*app;
+	int		i;
 
-	len = 0;
-	if (n < 0)
+	i = 0;
+	app = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!app)
+		return (NULL);
+	while (s[i])
 	{
-		len++;
-		n *= -1;
+		app[i] = f(i, s[i]);
+		i++;
 	}
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_numlen_unsigned(unsigned int n)
-{
-	int		len;
-
-	len = 0;
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_putchar(char *c)
-{
-	write(1, &c, 1);
-	return (1);
+	app[i] = '\0';
+	return (app);
 }

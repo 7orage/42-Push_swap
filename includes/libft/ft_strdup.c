@@ -1,54 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_libft.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:44:11 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 11:54:10 by lheteau          ###   ########.fr       */
+/*   Created: 2025/11/13 16:40:52 by lheteau           #+#    #+#             */
+/*   Updated: 2025/11/24 12:10:14 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_numlen(int n)
+char	*ft_strdup(const char *s)
 {
-	int	len;
+	char	*dest;
+	int		i;
 
-	len = 0;
-	if (n < 0)
+	i = 0;
+	dest = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (dest == NULL)
+		return (NULL);
+	while (s[i])
 	{
-		len++;
-		n *= -1;
+		dest[i] = s[i];
+		i++;
 	}
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
+	dest[i] = '\0';
+	return (dest);
 }
-
-int	ft_numlen_unsigned(unsigned int n)
+/*
+int	main(void)
 {
-	int		len;
+	const char      *original = "L'original";
+	char            *copie = ft_strdup(original);
 
-	len = 0;
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_putchar(char *c)
-{
-	write(1, &c, 1);
-	return (1);
-}
+	printf("%s", copie);
+}*/

@@ -1,54 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_libft.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:44:11 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 11:54:10 by lheteau          ###   ########.fr       */
+/*   Created: 2025/11/11 14:25:12 by lheteau           #+#    #+#             */
+/*   Updated: 2025/11/24 12:13:17 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_numlen(int n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	len;
+	int		r;
+	size_t	i;
 
-	len = 0;
-	if (n < 0)
+	i = 0;
+	while (i < n)
 	{
-		len++;
-		n *= -1;
+		r = *(unsigned char *)s1++ - *(unsigned char *)s2++;
+		if (r != 0)
+			return (r);
+		i++;
 	}
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
+	return (0);
 }
 
-int	ft_numlen_unsigned(unsigned int n)
+/*
+int	main(void)
 {
-	int		len;
+	//char s[] = {-128, 0, 127, 0};
+	char s2[] = {0, 0, 127, 0};
+	char s3[] = {0, 0, 42, 0};
 
-	len = 0;
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_putchar(char *c)
-{
-	write(1, &c, 1);
-	return (1);
-}
+	printf("%d\n", ft_memcmp(s2, s3, 4));
+	printf("%d", memcmp(s2, s3, 4));
+}*/

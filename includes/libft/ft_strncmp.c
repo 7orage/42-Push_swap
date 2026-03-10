@@ -1,54 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_libft.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:44:11 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 11:54:10 by lheteau          ###   ########.fr       */
+/*   Created: 2025/11/17 10:29:52 by lheteau           #+#    #+#             */
+/*   Updated: 2025/11/24 12:10:27 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_numlen(int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	len;
+	size_t	i;
 
-	len = 0;
-	if (n < 0)
-	{
-		len++;
-		n *= -1;
-	}
+	i = 0;
 	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
+		return (0);
+	while ((s1[i] || s2[i]) && (i < n - 1) && s1[i] == s2[i])
+		i++;
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
-
-int	ft_numlen_unsigned(unsigned int n)
+/*
+int	main(void)
 {
-	int		len;
-
-	len = 0;
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_putchar(char *c)
-{
-	write(1, &c, 1);
-	return (1);
-}
+	printf("%d", ft_strncmp("1234", "1235", 3));
+}*/

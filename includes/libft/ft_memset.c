@@ -1,54 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_libft.c                                         :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:44:11 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 11:54:10 by lheteau          ###   ########.fr       */
+/*   Created: 2025/11/07 16:39:22 by lheteau           #+#    #+#             */
+/*   Updated: 2025/11/13 14:21:15 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_numlen(int n)
+void	*ft_memset(void	*s, int c, size_t n)
 {
-	int	len;
+	size_t			i;
+	unsigned char	*ps;
 
-	len = 0;
-	if (n < 0)
+	ps = s;
+	i = 0;
+	while (i < n)
 	{
-		len++;
-		n *= -1;
+		ps[i] = c;
+		i++;
 	}
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
+	return (s);
 }
-
-int	ft_numlen_unsigned(unsigned int n)
+/*
+int	main(void)
 {
-	int		len;
-
-	len = 0;
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_putchar(char *c)
-{
-	write(1, &c, 1);
-	return (1);
-}
+	char str[] = "This is a test of the memset function";
+	
+	printf( "Before: %s\n", str );
+	ft_memset( str, '*', (sizeof(char) * 4));
+	printf( "After:  %s\n", str );
+}*/

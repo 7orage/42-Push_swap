@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 16:03:03 by lheteau           #+#    #+#             */
-/*   Updated: 2026/02/23 18:34:23 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/09 13:22:53 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@ static void	rvr(t_stack *stack)
 void	rra(t_stack *stack_a)
 {
 	rvr(stack_a);
-	ft_printf("rra\n");
+	//ft_printf("rra\n");
 }
 
 void	rrb(t_stack *stack_b)
 {
 	rvr(stack_b);
-	ft_printf("rrb\n");
+	//ft_printf("rrb\n");
 }
 
 void	rrr(t_stack *stack_a, t_stack *stack_b)
 {
 	rvr(stack_a);
 	rvr(stack_b);
-	ft_printf("rrr\n");
+	//ft_printf("rrr\n");
 }

@@ -1,54 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_libft.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:44:11 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 11:54:10 by lheteau          ###   ########.fr       */
+/*   Created: 2025/11/13 16:05:47 by lheteau           #+#    #+#             */
+/*   Updated: 2026/03/10 11:51:27 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_numlen(int n)
+void	*ft_calloc(size_t elementCount, size_t elementSize)
 {
-	int	len;
+	size_t			i;
+	unsigned char	*p;
 
-	len = 0;
-	if (n < 0)
+	p = (unsigned char *)malloc(elementCount * elementSize);
+	i = 0;
+	if (p == NULL)
+		return (p);
+	while (i < elementCount * elementSize)
 	{
-		len++;
-		n *= -1;
+		p[i] = 0;
+		i++;
 	}
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_numlen_unsigned(unsigned int n)
-{
-	int		len;
-
-	len = 0;
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_putchar(char *c)
-{
-	write(1, &c, 1);
-	return (1);
+	return (p);
 }

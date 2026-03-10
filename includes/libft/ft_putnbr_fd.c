@@ -1,54 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_libft.c                                         :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/07 15:44:11 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 11:54:10 by lheteau          ###   ########.fr       */
+/*   Created: 2025/11/21 19:03:22 by lheteau           #+#    #+#             */
+/*   Updated: 2025/11/24 12:11:55 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_numlen(int n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	len;
-
-	len = 0;
-	if (n < 0)
+	if (n == -2147483648)
 	{
-		len++;
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	if (n < 0 && n != -2147483648)
+	{
 		n *= -1;
+		ft_putchar_fd('-', fd);
 	}
-	if (n == 0)
-		len++;
-	while (n != 0)
+	if (n >= 0 && n <= 9)
+		ft_putchar_fd(48 + n, fd);
+	else
 	{
-		n /= 10;
-		len++;
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
-	return (len);
-}
-
-int	ft_numlen_unsigned(unsigned int n)
-{
-	int		len;
-
-	len = 0;
-	if (n == 0)
-		len++;
-	while (n != 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_putchar(char *c)
-{
-	write(1, &c, 1);
-	return (1);
 }

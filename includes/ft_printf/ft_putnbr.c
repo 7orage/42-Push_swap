@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/28 16:20:42 by lheteau           #+#    #+#             */
-/*   Updated: 2025/12/05 16:07:44 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/10 11:52:35 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_putnbr(int n)
 
 int	ft_putnbr_unsigned(unsigned int n)
 {
-	if (n >= 0 && n <= 9)
+	if (n <= 9)
 	{
 		n += 48;
 		write(1, &n, 1);

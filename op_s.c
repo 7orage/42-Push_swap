@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 13:00:50 by lheteau           #+#    #+#             */
-/*   Updated: 2026/02/21 16:24:18 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/09 13:22:55 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@ static void	swap(t_stack *stack)
 void	swap_a(t_stack *stack_a)
 {
 	swap(stack_a);
-	ft_printf("sa\n");
+	//ft_printf("sa\n");
 }
 
 void	swap_b(t_stack *stack_b)
 {
 	swap(stack_b);
-	ft_printf("sb\n");
+	//ft_printf("sb\n");
 }
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
 {
 	swap(stack_a);
 	swap(stack_b);
-	ft_printf("ss\n");
+	//ft_printf("ss\n");
 }
