@@ -6,7 +6,7 @@
 #    By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/21 13:06:52 by lheteau           #+#    #+#              #
-#    Updated: 2026/03/10 13:41:23 by lheteau          ###   ########.fr        #
+#    Updated: 2026/03/10 15:50:58 by lheteau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,10 @@
 NAME      = push_swap
 
 CC = cc
-SRC = get_lst.c main.c op_p.c op_r.c op_rr.c op_s.c utils.c radix_test.c
+SRC = get_lst.c radix.c main.c utils.c check_arg.c op_p.c op_r.c op_rr.c op_s.c  
 OBJ_DIR = obj
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
 FT_PRINTF_DIR = includes/ft_printf
 LIBFT_DIR = includes/libft
@@ -41,7 +41,7 @@ $(NAME): $(OBJ) $(LIBFT) $(FT_PRINTF)
 
 $(OBJ_DIR)/%.o: %.c
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -I. -I$(LIBFT) -I$(FT_PRINTF_DIR) -c $< -o $@
+	$(CC) $(CFLAGS) -I. -I$(LIBFT_DIR) -I$(FT_PRINTF_DIR) -c $< -o $@
 
 
 clean:

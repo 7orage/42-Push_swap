@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 14:23:48 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/09 16:27:12 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/10 16:43:12 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ void	lst_new_val(t_stack **stack_a, int value)
 	if (!new)
 		return ;
 	new->value = value;
+	new->index = -1;
 	new->next = NULL;
 	if (!*stack_a)
 		*stack_a = new;
@@ -96,10 +97,30 @@ void	lst_new_val(t_stack **stack_a, int value)
 	}
 }
 
+void	set_index(t_stack **stack_a, int i)
+{
+	t_stack	*high;
+	t_stack *tp;
+
+	while (i--)
+	{
+		high = NULL;
+		tp = *stack_a;
+		while (tp)
+		{
+			if (tp->index < 0 && (high == NULL || tp->value > high->value))
+				high = tp;
+			tp = tp->next;
+		}
+		if (high)
+			high->index = i;
+	}
+}
+
 // INIT THE COLLECTIBLE LISTE
 void	lst_get_list(t_stack **stack_a, char **raw_stack)
 {
-	int	i;
+	int					i;
 
 	i = 0;
 	while (raw_stack[i])
@@ -107,4 +128,5 @@ void	lst_get_list(t_stack **stack_a, char **raw_stack)
 		lst_new_val(stack_a, ft_atoi(raw_stack[i]));
 		i++;
 	}
+	set_index(stack_a, i);
 }

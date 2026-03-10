@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 12:52:20 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 13:48:19 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/10 16:43:19 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_stack
 {
 	int				value;
+	int				index;
 	struct s_stack	*next;
 }					t_stack;
 

@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 13:09:58 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 15:01:59 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/10 16:44:09 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	char	**raw_stack;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	//t_stack *ptr;
+	t_stack *ptr;
 
 	(void)argv;
 	if (argc == 1)
@@ -55,7 +55,6 @@ int	main(int argc, char **argv)
 	}*/
 
 	radix_sort_test(&stack_a, &stack_b);
-	//align(&stack_a, &stack_b);
 	/*
 	ptr = stack_a;
 	ft_printf("\n\n VALUE A --F\n");
@@ -70,6 +69,6 @@ int	main(int argc, char **argv)
 	{
 		ft_printf("value b %d\n", ptr->value);
 		ptr = ptr->next;
-	}
-*/
+	}*/
+
 }
