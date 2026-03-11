@@ -6,12 +6,12 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 13:00:50 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/09 13:22:55 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/11 15:18:37 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
 static void	swap(t_stack *stack)
 {
 	int		val;
@@ -41,3 +41,4 @@ void	ss(t_stack *stack_a, t_stack *stack_b)
 	swap(stack_b);
 	//ft_printf("ss\n");
 }
+*/

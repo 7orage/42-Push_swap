@@ -5,34 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/21 14:28:54 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 15:47:38 by lheteau          ###   ########.fr       */
+/*   Created: 2026/03/11 12:34:01 by lheteau           #+#    #+#             */
+/*   Updated: 2026/03/11 12:52:28 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**get_stack(char **stack_f, char **argv)
+void	free_tab(char **tab)
 {
-	char	*tmp;
-	char	*stack;
-	int		i;
+	int	i;
 
-	i = 1;
-	stack = ft_strdup("");
-	while (argv[i])
+	i = 0;
+	if (tab == NULL)
+		return ;
+	while (tab[i])
 	{
-		tmp = stack;
-		stack = ft_strjoin(stack, " ");
-		free(tmp);
-		tmp = stack;
-		stack = ft_strjoin(stack, argv[i]);
-		free(tmp);
+		if (tab[i] != NULL)
+			free(tab[i]);
 		i++;
 	}
-	check_arg(stack);
-	tmp = stack;
-	stack_f = ft_split(stack, ' ');
-	free(stack);
-	return (stack_f);
+	free(tab);
 }

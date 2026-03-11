@@ -6,12 +6,13 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 13:39:14 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 16:42:16 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/11 15:19:24 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// SORT ALL VALUE : RADIX ALGO
 int	get_stack_size(t_stack *stack)
 {
 	int	i;

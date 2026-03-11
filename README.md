@@ -13,9 +13,4 @@ shuf : C'est un utilitaire qui génère des permutations aléatoires.
 ARG=$(...) : Stocke cette liste de 100 nombres dans une variable nommée ARG.
 
 CHECKS:
-	//check duplicate
 	//check already trier
-	//check only numeric param, 1+ MAXINT
-	//if any param return nothing
-
-	//GERER NEGATIFS

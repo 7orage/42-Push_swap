@@ -6,12 +6,12 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 16:03:03 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/09 13:22:53 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/11 15:18:29 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
 static void	rvr(t_stack *stack)
 {
 	t_stack	*ptr;
@@ -41,3 +41,4 @@ void	rrr(t_stack *stack_a, t_stack *stack_b)
 	rvr(stack_b);
 	//ft_printf("rrr\n");
 }
+*/

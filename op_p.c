@@ -6,12 +6,13 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 14:31:06 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/10 12:42:53 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/11 15:17:36 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// TAKE THE FISRT ELEMENT AT THE TOP OF 1 AND PUT IT AT THE TOP OF 2
 static void	push(t_stack **stack_1, t_stack **stack_2)
 {
 	t_stack	*tmp;

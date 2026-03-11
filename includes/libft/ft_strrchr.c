@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 12:04:20 by lheteau           #+#    #+#             */
-/*   Updated: 2025/11/17 19:34:42 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/11 15:33:41 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strrchr(const char *s, int c)
 			i++;
 		}
 		else
-		i++;
+			i++;
 	}
 	return (NULL);
 }
