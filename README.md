@@ -22,3 +22,21 @@ ptr = stack_a;
 		ft_printf("value a %d\n", (int)ptr->value);
 		ptr = ptr->next;
 	}
+
+/* pour verif conso */ 
+
+1 .implemeter une boucle infinie dans main:
+
+#include <stdint.h>
+while (1) 
+    {
+        sleep(1); // Boucle infinie : le programme ne s'arrêtera jamais seul
+    }
+
+2. dans un autre terminal taper commande
+
+htop -p $(pgrep <nom_prog>)
+
+3. calcule conso propre
+
+RES−SHR=Mem propre
