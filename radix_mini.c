@@ -6,12 +6,13 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:26:27 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 17:28:10 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 17:29:34 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// SORT THREE NUMBERS 
 void	sort_three(t_stack **stack_a)
 {
 	int	one;
@@ -39,6 +40,7 @@ void	sort_three(t_stack **stack_a)
 		reverse_rotate_a(stack_a);
 }
 
+// SORT FIVE NUMBERS
 void	sort_five(t_stack **stack_a)
 {
 	t_stack	*stack_b;

@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 15:46:44 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 14:49:00 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 18:02:10 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,27 @@ int	check_tri(t_stack **stack_a)
 	return (0);
 }
 
-// CHECK IF DUPLICATES / -32768 < NBR > 32767
+// CHECK IF DUPLICATES
 int	check_dup(t_stack **stack_a)
 {
 	t_stack	*current;
+	t_stack	*mouv;
 
 	current = *stack_a;
+	mouv = (*stack_a)->next;
 	while (current->next)
 	{
-		if (current->value == current->next->value)
-			return (0);
+		while (mouv)
+		{
+			if (current->value == mouv->value)
+				return (0);
+			if (mouv->next)
+				mouv = mouv->next;
+			else
+				mouv = NULL;
+		}
 		current = current->next;
+		mouv = current->next;
 	}
 	return (1);
 }

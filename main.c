@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 13:09:58 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 17:25:00 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 18:02:22 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_error(char *s)
 {
 	(void)s;
 	write(1, "Error\n", 6);
-	//write(1, s, ft_strlen(s));
-	//write(1, "\n", 1);
 	exit(EXIT_FAILURE);
 }
 
@@ -79,13 +77,3 @@ int	main(int argc, char **argv)
 	lst_free(stack_a);
 	return (0);
 }
-
-//init ma liste
-//verifier argv == 2
-//if (pas deja sorted)
-//if taille liste == 2
-//	une truc rotate
-//if taille == 3
-//	envoyer fonction 3
-//sinon turkish
-//tout free
