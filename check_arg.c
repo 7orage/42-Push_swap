@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 15:46:44 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 20:25:03 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 21:35:51 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	check_num(char *stack)
 	{
 		if (ft_isdigit_int(stack[i]) == 2)
 		{
-			if (ft_isdigit_int(stack[i + 1]) != 1)
+			if (ft_isdigit_int(stack[i + 1]) != 1 || stack[i - 1] != ' ')
 			{
 				free(stack);
 				ft_error("Wrong character in argument");

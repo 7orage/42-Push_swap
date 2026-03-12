@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 13:09:58 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 21:25:24 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 21:32:28 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,11 @@ int	main(int argc, char **argv)
 	free_tab(raw_stack);
 	if (check_tri(&stack_a) == 0)
 	{
+		if (check_dup(&stack_a) == 0)
+		{
+			lst_free(stack_a);
+			ft_error("I smell deviousness");
+		}
 		lst_free(stack_a);
 		return (1);
 	}
