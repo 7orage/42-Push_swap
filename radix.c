@@ -6,27 +6,14 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 13:39:14 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/11 15:19:24 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 16:29:37 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // SORT ALL VALUE : RADIX ALGO
-int	get_stack_size(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while (stack)
-	{
-		stack = stack->next;
-		i++;
-	}
-	return (i);
-}
-
-int	get_max_bits(t_stack *stack)
+static int	get_max_bits(t_stack *stack)
 {
 	int	max;
 	int	max_bits;
@@ -46,7 +33,7 @@ int	get_max_bits(t_stack *stack)
 	return (max_bits);
 }
 
-void	radix_sort_test(t_stack **stack_a, t_stack **stack_b)
+void	radix_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int		i;
 	int		j;
@@ -54,7 +41,7 @@ void	radix_sort_test(t_stack **stack_a, t_stack **stack_b)
 	int		max_bits;
 	t_stack	*current_a;
 
-	size = get_stack_size(*stack_a);
+	size = lst_get_size(*stack_a);
 	max_bits = get_max_bits(*stack_a);
 	i = 0;
 	while (i < max_bits)

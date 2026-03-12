@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 16:25:13 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/11 12:56:17 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 14:20:46 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	s;
-	int	resultat;
+	int			i;
+	int			s;
+	long int	resultat;
 
 	i = 0;
 	s = 1;
@@ -34,8 +34,6 @@ int	ft_atoi(const char *nptr)
 		resultat = resultat * 10 + nptr[i] - 48;
 		i++;
 	}
-	if ((resultat * s) < -32768 || (resultat * s) > 32767)
-		return (32768);
 	return (resultat * s);
 }
 /*

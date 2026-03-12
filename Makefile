@@ -6,7 +6,7 @@
 #    By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/21 13:06:52 by lheteau           #+#    #+#              #
-#    Updated: 2026/03/11 14:56:34 by lheteau          ###   ########.fr        #
+#    Updated: 2026/03/12 15:29:11 by lheteau          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@
 NAME      = push_swap
 
 CC = cc
-SRC = main.c get_stack.c get_lst.c utils.c \
-	radix.c check_arg.c op_p.c op_r.c op_rr.c op_s.c  
+SRC = main.c get_stack.c get_lst.c utils.c check_arg.c\
+	radix.c radix_mini.c op_p.c op_r.c op_rr.c op_s.c  
 OBJ_DIR = obj
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 CFLAGS = -Wall -Wextra -Werror -g

@@ -6,14 +6,14 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 15:10:52 by lheteau           #+#    #+#             */
-/*   Updated: 2025/11/26 14:47:30 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 13:41:48 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-//# include <limits.h>
+# include <limits.h>
 # include <stdbool.h>
 # include <stddef.h>
 //# include <stdio.h>

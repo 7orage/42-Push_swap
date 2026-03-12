@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 14:23:48 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/11 15:26:45 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 15:23:26 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,31 @@ void	lst_free(t_stack *stack)
 	}
 }
 
+// GET THE SIZE OF THE LIST
+int	lst_get_size(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		stack = stack->next;
+		i++;
+	}
+	return (i);
+}
+
 // ADD A NEW VALUE TO THE LISTE
-void	lst_new_val(t_stack **stack_a, int value)
+int	lst_new_val(t_stack **stack_a, long int value)
 {
 	t_stack	*new;
 	t_stack	*ptr;
 
+	if (value < INT_MIN || value > INT_MAX)
+		return (0);
 	new = malloc(sizeof(t_stack));
 	if (!new)
-		return ;
+		return (0);
 	new->value = value;
 	new->index = -1;
 	new->next = NULL;
@@ -46,6 +62,7 @@ void	lst_new_val(t_stack **stack_a, int value)
 			ptr = ptr->next;
 		ptr->next = new;
 	}
+	return (1);
 }
 
 // INIT THE VALUE LIST
@@ -69,15 +86,17 @@ static void	set_index(t_stack **stack_a, int i)
 	}
 }
 
-void	lst_get_list(t_stack **stack_a, char **raw_stack)
+int	lst_get_list(t_stack **stack_a, char **raw_stack)
 {
-	int					i;
+	int	i;
 
 	i = 0;
 	while (raw_stack[i])
 	{
-		lst_new_val(stack_a, ft_atoi(raw_stack[i]));
+		if (lst_new_val(stack_a, ft_atol(raw_stack[i])) == 0)
+			return (0);
 		i++;
 	}
 	set_index(stack_a, i);
+	return (1);
 }

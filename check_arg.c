@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 15:46:44 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/11 15:30:08 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 14:49:00 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,55 +46,32 @@ void	check_num(char *stack)
 	}
 }
 
-// CHECK IF DUPLICATES / -32768 < NBR > 32767
-static void	check_over_int(char **raw_stack, char **tab, int i)
-{
-	if ((*tab)[ft_atoi(raw_stack[i]) + 32768] == 1)
-	{
-		free_tab(raw_stack);
-		free(*tab);
-		ft_error("Duplicate numbers");
-	}
-	(*tab)[ft_atoi(raw_stack[i]) + 32768] = 1;
-}
-
-void	check_dup_over(char **raw_stack)
-{
-	char	*tab;
-	int		i;
-
-	i = 0;
-	tab = ft_calloc(65535, sizeof(char));
-	while (raw_stack[i])
-	{
-		if (ft_atoi(raw_stack[i]) == 32768)
-		{
-			free_tab(raw_stack);
-			free(tab);
-			ft_error("A number exceeds the limits of the integers");
-		}
-		else
-			check_over_int(raw_stack, &tab, i);
-		i++;
-	}
-	free(tab);
-}
-
 // CHECK IF n1 < n2 < n3 ... < nf
-int	check_tri(char **raw_stack)
+int	check_tri(t_stack **stack_a)
 {
-	int		i;
-	int		last;
+	t_stack	*current;
 
-	i = 1;
-	last = ft_atoi(raw_stack[0]);
-	while (raw_stack[i])
+	current = *stack_a;
+	while (current->next)
 	{
-		if (last < ft_atoi(raw_stack[i]))
-			last = ft_atoi(raw_stack[i]);
-		else
+		if (current->value > current->next->value)
 			return (1);
-		i++;
+		current = (current)->next;
 	}
 	return (0);
+}
+
+// CHECK IF DUPLICATES / -32768 < NBR > 32767
+int	check_dup(t_stack **stack_a)
+{
+	t_stack	*current;
+
+	current = *stack_a;
+	while (current->next)
+	{
+		if (current->value == current->next->value)
+			return (0);
+		current = current->next;
+	}
+	return (1);
 }

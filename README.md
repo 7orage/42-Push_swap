@@ -12,5 +12,13 @@ shuf : C'est un utilitaire qui génère des permutations aléatoires.
 
 ARG=$(...) : Stocke cette liste de 100 nombres dans une variable nommée ARG.
 
-CHECKS:
-	//check already trier
+
+/* pour visu stacks */
+
+ptr = stack_a;
+	ft_printf("\n\n VALUE A --F\n");
+	while (ptr)
+	{
+		ft_printf("value a %d\n", (int)ptr->value);
+		ptr = ptr->next;
+	}

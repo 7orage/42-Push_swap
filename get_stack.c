@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 14:28:54 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/11 15:31:49 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/11 20:47:35 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ char	**get_stack(char **stack_f, char **argv)
 	tmp = stack;
 	stack_f = ft_split(stack, ' ');
 	free(stack);
+/*
+
 	check_dup_over(stack_f);
 	if (check_tri(stack_f) == 0)
 		return (free_tab(stack_f), NULL);
+*/
 	return (stack_f);
 }
