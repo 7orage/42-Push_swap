@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 12:52:20 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 17:31:30 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 20:25:10 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void		lst_free(t_stack *stack);
 
 void		radix_sort(t_stack **stack_a, t_stack **stack_b);
 void		sort_three(t_stack **stack_a);
+void	sort_four(t_stack **stack_a);
 void		sort_five(t_stack **stack_a);
 
 void		push_b(t_stack **stack_a, t_stack **stack_b);

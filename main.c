@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 13:09:58 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 18:02:22 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 20:39:16 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,12 @@ int	main(int argc, char **argv)
 			swap_a(&stack_a);
 		else if (lst_get_size(stack_a) == 3)
 			sort_three(&stack_a);
+		else if (lst_get_size(stack_a) == 4)
+			sort_four(&stack_a);
 		else if (lst_get_size(stack_a) == 5)
+		{
 			sort_five(&stack_a);
+		}
 		else
 			radix_sort(&stack_a, &stack_b);
 	}

@@ -6,14 +6,14 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 15:46:44 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 18:02:10 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/12 20:25:03 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // CHECK IF ONLY NUMBER (MINUS INCLUDES)
-static int	ft_isdigit_int(int c)
+static int	ft_isdigit_int(char c)
 {
 	if (c == '-')
 		return (2);
