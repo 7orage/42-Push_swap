@@ -1,7 +1,7 @@
 _This project has been created as part of the 42 curriculum by lheteau._  
 _We are the 08 March 2025._
 
-# So_long
+# Push_swap
 ![Previsualisation of the XXXX](XXXXXXXXXXXXXXXX)
 ### Table of contents
 ***
@@ -75,7 +75,7 @@ ARG=$(shuf -i <between int min>-<and int max> -n <size list>); ./push_swap $ARG
 
 [gemartin99's Push_swap-Tester: ](https://github.com/gemartin99/Push-Swap-Tester#)
 
-And finally to calculate my final score [SimonCROS's push_swap_tester](https://github.com/SimonCROS/push_swap_tester) was useful.
+And finally to calculate my final score, [SimonCROS's push_swap_tester](https://github.com/SimonCROS/push_swap_tester) was useful.
 
 ## **Tips**
 ***
