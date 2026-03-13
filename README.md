@@ -79,7 +79,7 @@ And finally to calculate my final score [SimonCROS's push_swap_tester](https://g
 
 ## **Tips**
 ***
-![Previsualisation of the consum test](XXXXXXXXXXXXXXXX)
+![Previsualisation of the consum test](https://github.com/7orage/42-Push_swap/issues/1#issue-4072078050)
 • To monitor my program's memory consumption, insert the following section into the main function:
 ```
 #include <stdint.h>
