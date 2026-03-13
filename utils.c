@@ -6,12 +6,13 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 12:34:01 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 15:24:51 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/13 13:59:02 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// UTILS
 void	free_tab(char **tab)
 {
 	int	i;

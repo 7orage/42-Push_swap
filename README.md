@@ -1,19 +1,33 @@
-ARG=$(shuf -i 0-5000 -n 100); ./push_swap $ARG | ./checker_linux $ARG
+_This project has been created as part of the 42 curriculum by lheteau._  
+_We are the 08 March 2025._
 
+# So_long
+![Previsualisation of the XXXX](XXXXXXXXXXXXXXXX)
+### Table of contents
+***
+1. _Description_
+2. _Instructions_
+3. _Ressources_
+4. _Tips_
 
-1. La génération des nombres (ARG=...)
-ARG=$(shuf -i 0-5000 -n 100)
+***
+## **Description**
+***
+• Push_swap is a sorting utility developed in C. The goal is to tackle algorithm complexity (O(n)) and data structure manipulation through the optimization of sorting operations.
 
-shuf : C'est un utilitaire qui génère des permutations aléatoires.
+It validates a list of integers before converting them into linked list of nodes.
 
--i 0-5000 : Définit la plage de nombres (entre 0 et 5000).
+It utilizes two stacks and a specific set of operations (swaps, pushes, and rotations) to sort data efficiently, selecting hardcoded optimal moves for small sets or a Binary Radix Sort for larger datasets.
+***
+• The Radix Sort processes numbers bit by bit from the least to the most significant bit based on their relative indices. 
 
--n 100 : Demande de choisir 100 nombres parmi cette plage.
+During each pass, the algorithm inspects a specific bit of the top element in stack_a: if the bit is 1, the element is rotated to the bottom (ra); if it is 0, it is pushed to stack_b (pb). 
 
-ARG=$(...) : Stocke cette liste de 100 nombres dans une variable nommée ARG.
-
-
-/* pour visu stacks */
+After checking every element for that bit, all values are pushed back to stack_a (pa), progressively organizing the stack until it is fully sorted.X
+***
+• To see the result of the stack, we can implement the following part at the end of the main function:
+```
+t_stack	*ptr;
 
 ptr = stack_a;
 	ft_printf("\n\n VALUE A --F\n");
@@ -22,21 +36,65 @@ ptr = stack_a;
 		ft_printf("value a %d\n", (int)ptr->value);
 		ptr = ptr->next;
 	}
+```
 
-/* pour verif conso */ 
+## **Instructions**
+***
+• To use it in your own project, include the header:  
+```#include "push_swap.h"```.
 
-1 .implemeter une boucle infinie dans main:
+To compile the project :  
+```make```  
 
+• And to execute it :  
+```./push_swap <argv>```
+
+You can also generate a list of random numbers of a specific size by running the following command:
+```
+ARG=$(shuf -i <between int min>-<and int max> -n <size list>); ./push_swap $ARG
+```
+***
+• The engine performs the following strict validations before launch:
+- Checks if the arguments are numbers
+- Ensure there is no duplicates
+- Confirms there are at least 2 numbers to be sorted
+- At the same time checks for void parameter
+- Ensure that the numbers are between int_max and int_min
+- Finaly, test if the sequenc eis already sorted
+
+## **Ressources**
+***
+• [Explanation of Radix sort (article): ](https://www.geeksforgeeks.org/dsa/radix-sort/) A fundamental resource for understanding how the algorithm works.
+
+[CS Dojo's introduction to Radix (video):](https://www.youtube.com/watch?v=XiuSW_mEn7g) As before, it explains the Radix Sort algorithm in a similar fashion.  
+
+***
+• Artificial Intelligence tools were used in the writing and structuring of this README.
+***
+• To push the project to its highest standard, the following push_swap testers were instrumental in identifying edge cases and validating the robustness of the parsing engine: 
+
+[gemartin99's Push_swap-Tester: ](https://github.com/gemartin99/Push-Swap-Tester#)
+
+And finally to calculate my final score [SimonCROS's push_swap_tester](https://github.com/SimonCROS/push_swap_tester) was useful.
+
+## **Tips**
+***
+![Previsualisation of the consum test](XXXXXXXXXXXXXXXX)
+• To monitor my program's memory consumption, insert the following section into the main function:
+```
 #include <stdint.h>
 while (1) 
     {
-        sleep(1); // Boucle infinie : le programme ne s'arrêtera jamais seul
+        sleep(1); // Infinite loop: the program will never stop on its own.
     }
+```
 
-2. dans un autre terminal taper commande
+Then run this command:
+```
+htop -p $(pgrep ./push_swap)
+```
 
-htop -p $(pgrep <nom_prog>)
+Finally, calculate RES - SHR to determine the private memory usage.
 
-3. calcule conso propre
-
-RES−SHR=Mem propre
+<a href="https://www.linkedin.com/in/laura-heteau/" target="_blank"><img align="center" alt="LinkedIn" height="60" src="https://user-images.githubusercontent.com/81205527/157161849-01a9df02-bf32-45be-add4-122bc40b48cf.png"></a>
+<a href = "mailto:laura.heteauu@gmail.com"> <img align="center" alt="Gmail - laura.heteauu@gmail.com" height="60" src="https://user-images.githubusercontent.com/81205527/157161831-eb9dffee-404b-4ffe-b0af-34671219f7fb.png"></a>

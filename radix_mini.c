@@ -6,24 +6,21 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 15:26:27 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 20:39:27 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/13 13:58:56 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_min_to_b(t_stack **stack_a, t_stack **stack_b)
+// ISOLATE THE LOWEST INDEX
+static int	get_index(t_stack *ptr)
 {
-	t_stack		*ptr;
-	int			pos;
-	int			pos_r;
-	int			ind;
-	int			size;
+	int		ind;
+	int		pos;
+	int		pos_r;
 
-	ptr = *stack_a;
 	pos = 1;
 	ind = 1;
-	size = lst_get_size(*stack_a);
 	while (ptr)
 	{
 		if (ptr->index <= ind)
@@ -34,6 +31,19 @@ void	push_min_to_b(t_stack **stack_a, t_stack **stack_b)
 		ptr = ptr->next;
 		pos++;
 	}
+	return (pos_r);
+}
+
+//
+void	push_min_to_b(t_stack **stack_a, t_stack **stack_b)
+{
+	t_stack		*ptr;
+	int			pos_r;
+	int			size;
+
+	ptr = *stack_a;
+	size = lst_get_size(*stack_a);
+	pos_r = get_index(ptr);
 	if (pos_r <= 2 && pos_r != 1)
 	{
 		while (pos_r > 1)
@@ -81,6 +91,7 @@ void	sort_three(t_stack **stack_a)
 		reverse_rotate_a(stack_a);
 }
 
+// SORT FOUR NUMBERS
 void	sort_four(t_stack **stack_a)
 {
 	t_stack	*stack_b;

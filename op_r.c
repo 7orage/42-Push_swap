@@ -6,13 +6,13 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 16:02:06 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/11 15:18:23 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/13 13:28:06 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// SHIFT UP ALL ELEMENTS OF STACK BY 1
+// SHIFT UP ALL ELEMENTS OF STACK BY 1 (n1 -> nf)
 static void	rotate(t_stack **stack)
 {
 	t_stack	*ptr;
@@ -34,20 +34,3 @@ void	rotate_a(t_stack **stack_a)
 	rotate(stack_a);
 	ft_printf("ra\n");
 }
-/*
-void	rotate_b(t_stack **stack_b)
-{
-	if (!*stack_b || !stack_b || !(*stack_b)->next)
-		return ;
-	rotate(stack_b);
-	ft_printf("rb\n");
-}
-*/
-/*
-void	rr(t_stack *stack_a, t_stack *stack_b)
-{
-	rotate(stack_a);
-	rotate(stack_b);
-	ft_printf("rr\n");
-}
-*/

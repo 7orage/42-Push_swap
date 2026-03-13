@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 14:23:48 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 15:23:26 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/13 13:58:05 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ static void	set_index(t_stack **stack_a, int i)
 	}
 }
 
+//
 int	lst_get_list(t_stack **stack_a, char **raw_stack)
 {
 	int	i;

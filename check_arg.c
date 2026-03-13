@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 15:46:44 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/12 21:35:51 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/13 13:57:33 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static int	ft_isdigit_int(char c)
 	return (1);
 }
 
+//
 void	check_num(char *stack)
 {
 	int	i;
