@@ -2,7 +2,7 @@ _This project has been created as part of the 42 curriculum by lheteau._
 _We are the 08 March 2025._
 
 # Push_swap
-![Previsualisation of the XXXX](XXXXXXXXXXXXXXXX)
+![Previsualisation of the output (simple input)](https://github.com/user-attachments/assets/89cd4950-32d5-4e9a-90e8-d3b3ed159a04)
 ### Table of contents
 ***
 1. _Description_
