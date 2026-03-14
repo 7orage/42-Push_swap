@@ -51,7 +51,7 @@ To compile the project :
 
 You can also generate a list of random numbers of a specific size by running the following command:
 ```
-ARG=$(shuf -i <between int min>-<and int max> -n <size list>); ./push_swap $ARG
+ARG=$(shuf -i <between int min>-<and int max> -n <size list> | tr "\n" " "); ./push_swap $ARG
 ```
 ***
 • The engine performs the following strict validations before launch:
