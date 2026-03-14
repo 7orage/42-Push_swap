@@ -6,14 +6,38 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 15:46:44 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/13 13:57:33 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/14 13:38:48 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// CHECK IF THERE IS AT LEAST A NUMBER
+int	ft_is_there_digit_int(char **argv)
+{
+	int	i;
+	int	j;
+	int	nb;
+
+	i = 1;
+	j = 0;
+	nb = 0;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (ft_isdigit_int(argv[i][j]) == 1)
+				nb = 1;
+			j++;
+		}
+		i++;
+	}
+	return (nb);
+}
+
 // CHECK IF ONLY NUMBER (MINUS INCLUDES)
-static int	ft_isdigit_int(char c)
+int	ft_isdigit_int(char c)
 {
 	if (c == '-')
 		return (2);

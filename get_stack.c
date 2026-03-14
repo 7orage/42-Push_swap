@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 14:28:54 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/13 12:55:50 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/14 13:39:05 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	**get_stack(char **stack_f, char **argv)
 
 	i = 1;
 	stack = ft_strdup("");
+	if (ft_is_there_digit_int(argv) == 0)
+		return (NULL);
 	while (argv[i])
 	{
 		tmp = stack;

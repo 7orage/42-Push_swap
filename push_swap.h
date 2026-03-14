@@ -6,7 +6,7 @@
 /*   By: lheteau <lheteau@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 12:52:20 by lheteau           #+#    #+#             */
-/*   Updated: 2026/03/13 13:58:46 by lheteau          ###   ########.fr       */
+/*   Updated: 2026/03/14 13:38:38 by lheteau          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int			lst_get_size(t_stack *stack);
 
 int			check_tri(t_stack **stack);
 int			check_dup(t_stack **stack_a);
+int			ft_is_there_digit_int(char **argv);
+int			ft_isdigit_int(char c);
 
 long int	ft_atol(const char *nptr);
 
